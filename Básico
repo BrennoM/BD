@@ -1,0 +1,61 @@
+# BD
+  DDL
+    database
+      criar
+      selecionar
+    table
+      criar
+      alterar
+      apagar
+    DML
+     insert
+     
+create database dbmedico;
+use dbmedico;
+
+create table plano(
+idplan int auto_increment,
+nome varchar(50),
+primary key(idplan)
+);
+
+create table paciente(
+idpac int,
+nome varchar(50),
+datnasc date,
+idplan int,
+primary key(idpac),
+foreign key(idplan) references plano(idplan)
+);
+
+create table medico(
+idmed int auto_increment,
+nome varchar(50) not null,
+primary key(idmed)
+);
+
+create table consulta(
+idcons int,
+idmed int,
+idpac int,
+datcon date,
+prescricao varchar(500),
+primary key(idcons),
+foreign key (idmed) references medico(idmed),
+foreign key (idpac) references paciente(idpac)
+);
+
+insert plano(nome)
+values("Unimed");
+
+insert plano(nome)
+values ("GS");
+
+select * from plano;
+
+insert paciente (idpac, nome, datnasc, idplan)
+values (1, "Pedro", "2001-03-08", 1);
+
+select * from paciente;
+
+drop database dbmedico;
