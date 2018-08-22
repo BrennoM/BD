@@ -4844,6 +4844,10 @@ ALTER TABLE `uf`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
 
+select nome, concat(substring(data_cadastro,9,2)),'/',
+substring(data_cadastro, 6, 2),'/',
+substring(data_cadastro, 1, 4) as data_cadastro from cliente
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
