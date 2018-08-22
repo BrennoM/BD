@@ -4847,6 +4847,7 @@ COMMIT;
 select nome, concat(substring(data_cadastro,9,2)),'/',
 substring(data_cadastro, 6, 2),'/',
 substring(data_cadastro, 1, 4) as data_cadastro from cliente
+order by nome asc limit 5
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
